@@ -73,6 +73,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,json,ts}": [
+      "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
       "prettier --write ."
     ]
   },
