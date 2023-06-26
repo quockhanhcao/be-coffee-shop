@@ -1,19 +1,23 @@
-import { AbstractEntity } from "@common/entities/abstract.entity";
-import { Expose } from "class-transformer";
+import { AbstractEntity } from '@common/entities/abstract.entity';
+import { Expose } from 'class-transformer';
 
 export class AbstractDto {
-    @Expose()
-    id: number;
+  @Expose()
+  id: number;
 
-    createdAt: Date;
+  createdAt: Date;
 
-    createdBy: string;
+  createdBy: string;
 
-    updatedAt: Date;
+  updatedAt: Date;
 
-    updatedBy: string;
+  updatedBy: string;
 
-    constructor(entity?: AbstractEntity) {
-
-    }
+  constructor(entity?: AbstractEntity) {
+    this.id = entity?.id;
+    this.createdAt = entity.createdAt;
+    this.createdBy = entity.createdBy;
+    this.updatedAt = entity.updatedAt;
+    this.updatedBy = entity.updatedBy;
+  }
 }

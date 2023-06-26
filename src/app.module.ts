@@ -11,7 +11,8 @@ import { SharedModule } from '@shared/shared.module';
     SharedModule,
     TypeOrmModule.forRootAsync({
       inject: [ApiConfigService],
-      useFactory: (configService: ApiConfigService) => configService.typeORMConfig
+      useFactory: (configService: ApiConfigService) =>
+        configService.typeORMConfig,
     }),
     TagModule,
   ],
